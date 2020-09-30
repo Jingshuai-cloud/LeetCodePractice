@@ -44,12 +44,13 @@ public class PreorderTraversal {
         preOrder(root.right);
     }
 
+    //Use Stack and interation
     public List<Integer> preOrderTraversal(TreeNode root){
         LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
         LinkedList<Integer> output = new LinkedList<Integer>();
 
         if(root == null) return output;
-        stack.add(root);
+        stack.push(root);
         while(!stack.isEmpty()){
             TreeNode node = stack.pollLast();
             output.add(node.val);
