@@ -13,7 +13,7 @@ public class InorderTraversal {
 
     private TreeNode root;
 
-    public class TreeNode{
+    public class TreeNode {
         private TreeNode left;
         private TreeNode right;
         private int val;
@@ -22,7 +22,7 @@ public class InorderTraversal {
         }
     }
 
-    public  void createBinaryTree(){
+    public void createBinaryTree() {
         InorderTraversal.TreeNode first = new InorderTraversal.TreeNode(1);
         InorderTraversal.TreeNode second = new InorderTraversal.TreeNode(2);
         InorderTraversal.TreeNode third = new InorderTraversal.TreeNode(3);
@@ -37,18 +37,18 @@ public class InorderTraversal {
     }
 
     //Using recursion
-    public void inOrder(TreeNode root){
-        if(root == null) return;
+    public void inOrder(TreeNode root) {
+        if (root == null) return;
         inOrder(root.left);
         System.out.print(root.val + " ");
         inOrder(root.right);
     }
 
-    public List<Integer> inOrderTraversal(TreeNode root){
+    public List<Integer> inOrderTraversal (TreeNode root){
         LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
         LinkedList<Integer> output = new LinkedList<Integer>();
 
-        while(root != null || !stack.isEmpty()){
+        while(root != null || !stack.isEmpty()) {
             while(root != null){
                 stack.add(root);
                 root = root.left;
@@ -60,4 +60,5 @@ public class InorderTraversal {
 
         return output;
     }
+    //Use Stack and interation
 }

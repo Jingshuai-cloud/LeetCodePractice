@@ -13,7 +13,7 @@ public class PreorderTraversal {
 
     private TreeNode root;
 
-    public class TreeNode{
+    public class TreeNode {
         private TreeNode left;
         private TreeNode right;
         private int val;
@@ -22,7 +22,7 @@ public class PreorderTraversal {
         }
     }
 
-    public  void createBinaryTree(){
+    public  void createBinaryTree() {
         TreeNode first = new TreeNode(1);
         TreeNode second = new TreeNode(2);
         TreeNode third = new TreeNode(3);
@@ -37,25 +37,25 @@ public class PreorderTraversal {
     }
 
     //Using recursion
-    public void preOrder(TreeNode root){
-        if(root == null) return;
+    public void preOrder(TreeNode root) {
+        if (root == null) return;
         System.out.print(root.val + " ");
         preOrder(root.left);
         preOrder(root.right);
     }
 
     //Use Stack and interation
-    public List<Integer> preOrderTraversal(TreeNode root){
+    public List<Integer> preOrderTraversal(TreeNode root) {
         LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
         LinkedList<Integer> output = new LinkedList<Integer>();
 
-        if(root == null) return output;
-        stack.push(root);
-        while(!stack.isEmpty()){
+        if (root == null) return output;
+        stack.add(root);
+        while (!stack.isEmpty()){
             TreeNode node = stack.pollLast();
             output.add(node.val);
-            if(node.right != null) stack.add(node.right);
-            if(node.left != null) stack.add(node.left);
+            if (node.right != null) stack.add(node.right);
+            if (node.left != null) stack.add(node.left);
         }
 
         return output;
