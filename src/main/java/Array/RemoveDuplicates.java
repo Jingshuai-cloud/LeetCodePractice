@@ -1,9 +1,13 @@
 package Array;
 
+import java.util.HashMap;
+
 public class RemoveDuplicates {
     public static void main(String[] args) {
         int[] nums = {1,1,2,3,4,4};
         System.out.println(removeDuplicates2(nums));
+        HashMap<Integer,Integer> hashMap = new HashMap();
+
 
     }
 
