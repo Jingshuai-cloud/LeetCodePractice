@@ -44,6 +44,7 @@ public class InorderTraversal {
         inOrder(root.right);
     }
 
+    //Use Stack and interation
     public List<Integer> inOrderTraversal (TreeNode root){
         LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
         LinkedList<Integer> output = new LinkedList<Integer>();
@@ -60,5 +61,5 @@ public class InorderTraversal {
 
         return output;
     }
-    //Use Stack and interation
+
 }
