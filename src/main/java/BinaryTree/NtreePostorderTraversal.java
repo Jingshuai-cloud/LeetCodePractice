@@ -42,5 +42,7 @@ public class NtreePostorderTraversal {
         public Node(int val){
             this.val = val;
         }
+
     }
+
 }
