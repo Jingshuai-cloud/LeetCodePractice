@@ -23,11 +23,11 @@ public class InorderTraversal {
     }
 
     public void createBinaryTree() {
-        InorderTraversal.TreeNode first = new InorderTraversal.TreeNode(1);
-        InorderTraversal.TreeNode second = new InorderTraversal.TreeNode(2);
-        InorderTraversal.TreeNode third = new InorderTraversal.TreeNode(3);
-        InorderTraversal.TreeNode fourth = new InorderTraversal.TreeNode(4);
-        InorderTraversal.TreeNode five = new InorderTraversal.TreeNode(5);
+        TreeNode first = new TreeNode(1);
+        TreeNode second = new TreeNode(2);
+        TreeNode third = new TreeNode(3);
+        TreeNode fourth = new TreeNode(4);
+        TreeNode five = new TreeNode(5);
 
         root = first;
         first.left = second;

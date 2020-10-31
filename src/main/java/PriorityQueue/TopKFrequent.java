@@ -7,13 +7,16 @@ import java.util.PriorityQueue;
 
 public class TopKFrequent {
     public static void main(String[] args) {
-        int[] nums = {1,1,1,3,4,4,3,4,5,0};
+        int[] nums = {1,1,1,2,2,3,3,3,3,4};
         int k = 3;
         int[] result = topKelementHeep(nums, k);
+        for (int i : result){
+            System.out.print(i);
+        }
     }
 
     private static int[] topKelementHeep(int[] nums, int k) {
-        int[] result = new int[3];
+        int[] result = new int[k];
         HashMap<Integer, Integer> frequencyMap = new HashMap<>();
         PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
             @Override
@@ -23,7 +26,7 @@ public class TopKFrequent {
         });
 
         for (int num : nums) {
-            frequencyMap.put(num, frequencyMap.getOrDefault(nums, 0) + 1);
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
         }
 
         for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
@@ -36,6 +39,10 @@ public class TopKFrequent {
             }else {
                 pq.add(new int[] {key, count});
             }
+        }
+
+        for (int i = 0; i < k; i++) {
+            result[i] = pq.poll()[0];
         }
         return result;
     }
