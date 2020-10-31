@@ -12,7 +12,7 @@ public class MaxDepth {
         System.out.print( maxDepth.getMaxDepth(maxDepth.root));
     }
 
-    //recursion Time O(n) Space O(height)
+    //recursion Time O(n)/
     private int recursion(TreeNode root) {
         if (root == null) return 0;
         int leftHeight = recursion(root.left);
