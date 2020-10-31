@@ -7,9 +7,22 @@ public class MaxDepth {
     public static void main(String[] args) {
         MaxDepth maxDepth = new MaxDepth();
         maxDepth.createBinaryTree();
+        int result = maxDepth.recursion(maxDepth.root);
+        System.out.println(result);
         System.out.print( maxDepth.getMaxDepth(maxDepth.root));
     }
 
+    //recursion Time O(n) Space O(height)
+    private int recursion(TreeNode root) {
+        if (root == null) return 0;
+        int leftHeight = recursion(root.left);
+        int rightHeight = recursion(root.right);
+        return Math.max(leftHeight, rightHeight) + 1;
+
+    }
+
+    //Time O(n)  Space Bad O(n)
+    //BFS
     private int getMaxDepth(TreeNode root) {
         int res = 0;
         Queue<TreeNode> queue = new LinkedList<>();
