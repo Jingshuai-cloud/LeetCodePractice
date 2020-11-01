@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Stack;
 
 public class NtreePreoderTraversal {
+    //revcursion Time/space O(n)
+    ArrayList<Integer> list = new ArrayList();
    public List<Integer> preorder(Node root) {
-         ArrayList<Integer> list = new ArrayList();
             if (root == null) return list;
 
             list.add(root.val);
@@ -29,7 +30,7 @@ public class NtreePreoderTraversal {
             root = stack.pop();
             list.add(root.val);
             for (int i = root.children.size() - 1; i >= 0; i--)
-                stack.add(root.children.get(i));
+                stack.push(root.children.get(i));
         }
 
         return list;

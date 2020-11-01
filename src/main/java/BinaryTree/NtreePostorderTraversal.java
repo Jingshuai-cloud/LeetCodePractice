@@ -24,6 +24,7 @@ public class NtreePostorderTraversal {
         return list;
     }
 
+    //recursion time Space O(n)
     public List<Integer> postorder(Node root) {
         List<Integer> list = new ArrayList();
         if (root == null)
