@@ -25,12 +25,12 @@ public class RemoveDuplicates {
     }
 
     // count k
-    public static int removeDuplicates2(int[] nums){
+    public static int removeDuplicates2(int[] nums) {
         int count = 0;
         int len = nums.length;
-        for(int i = 1; i< len; i++){
-            if(nums[i] == nums [i-1]) count++;
-            else{
+        for (int i = 1; i< len; i++) {
+            if (nums[i] == nums [i-1]) count++;
+            else {
                 nums[i-count] = nums[i];
             }
         }
