@@ -12,9 +12,9 @@ public class FindMinumRotateArray {
         while (left < right) {
             mid = left + (right - left) / 2;
             if (nums[left] < nums[mid]) {
-                left = mid ;
+                left = mid;
             } else {
-                right = mid ;
+                right = mid;
             }
         }
         return nums[mid + 1];
