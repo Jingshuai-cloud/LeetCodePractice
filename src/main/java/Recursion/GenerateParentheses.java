@@ -14,12 +14,13 @@ public class GenerateParentheses {
     private static List<String> result = new ArrayList<>();
 
     private static List<String> backTrackGenerate2(int n, int left, int right, String parentheses) {
+        //terminator
         if (parentheses.length() == n * 2) {
             System.out.println(parentheses);
             result.add(parentheses);
             return result;
         }
-
+        //drill down
         if (left < n)
             backTrackGenerate2(n, left + 1, right, parentheses + "(");
 

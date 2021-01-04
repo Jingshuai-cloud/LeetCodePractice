@@ -9,11 +9,14 @@ public class PowXN {
     }
 
     private static double powRecursion(double x, int n) {
+        //terminator
         if (n == 0) return 1;
+        //current logic
         if (n < 0) {
             n = -n;
             x = 1/x;
         }
+        //drill down
         return n % 2 == 0 ? powRecursion(x * x, n / 2) : x * powRecursion(x * x, (n - 1) / 2);
     }
 }

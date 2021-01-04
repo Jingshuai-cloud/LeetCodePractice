@@ -19,7 +19,7 @@ public class IsValidBinarySearchTree {
 
         //drill down
         if (!helper(node.left, lower, node.val)) return false;
-        if (! helper(node.right, node.val, upper)) return false;
+        if (!helper(node.right, node.val, upper)) return false;
 
         return true;
 
