@@ -30,7 +30,7 @@ public class FibonacciNumber {
         return cache[n];
     }
 
-    //Dynamic Programming  Time/Space O(n)
+    //Dynamic Programming  Time/Space O(n) recursion
     private static int[] fib_cache = new int[31];
     public static int topDown(int n) {
         if (n <= 1) return n;
@@ -47,7 +47,7 @@ public class FibonacciNumber {
     public static int iterative(int n) {
         if (n <= 1) return n;
         int a = 0, b = 1;
-        while (n-- > 1) {
+        for (int i = 1; i < n; i++) {
             int sum = a + b;
             a = b;
             b = sum;

@@ -14,14 +14,14 @@ public class UniquePaths {
 
     //Time O(mn) SpaceO(m)
     private static int dynamicProgrammingAdvanced(int m, int n) {
-        int [] dp = new int[m];
-        Arrays.fill(dp, 1);
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < m; j++) {
-                dp[j] += dp[j - 1];
-            }
-        }
-        return dp[m - 1];
+     int[] dp = new int[m];
+     Arrays.fill(dp, 1);
+     for (int i = 1; i < n; i++) {
+         for (int j = 1; j < m; j++) {
+             dp[j] = dp[j] + dp[j - 1];
+         }
+     }
+     return dp[m - 1];
     }
 
     //Time O(mn) SpaceO(mn)
